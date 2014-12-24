@@ -11,8 +11,7 @@ namespace LetterCounter
     {
         static void Main(string[] args)
         {
-            var file = File.OpenText(@"c:\temp\songz.txt");
-            var input = file.ReadToEnd();
+            var input = File.ReadAllText(@"c:\temp\songz.txt");
             var freq = new int[26];
             for (var i = 0; i < 26; i++) freq[i] = 0;
             foreach(var x in input.ToLower())
