@@ -14,9 +14,9 @@ namespace LetterCounter
             var input = File.ReadAllText(@"c:\temp\songz.txt");
             var freq = new int[26];
 
-            foreach(var x in input.ToLower())
+            foreach(var x in input.ToLower().Where(Char.IsLetter))
             {
-                if (x >= 'a' && x <= 'z') freq[x - 'a']++;
+                freq[x - 'a']++;
             }
             for (int k=0;k<5;k++)
             {
